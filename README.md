@@ -12,38 +12,40 @@ TrEd has many extensions for different annotation scenarios, including one for
 Extensions come with macros that help you achieve certain operations easier and faster.
 You can also define your own macros. I keep mine in this repository.
 
-The location where TrEd looks for its macro files depends on the operating system.
-On my Windows 11, it is
+## Loading the macros to TrEd
+
+The information in this section is based on my observations and it may not be the best or
+intended way of achieving what I want to achieve. It is quite possible that the correct
+way is documented somewhere and I have overlooked it.
+
+TrEd's main configuration file is named `.tredrc` and its location depends on the operating
+system. On my Windows 11, it is
 
 ```
 %USERPROFILE%\AppData\Roaming
 ```
 
-After installing and running TrEd, you will probably find at least a `.tredrc` file there.
-This is a configuration file, not a macro file. I copy the `tred-ud-treex.mac` file to the
-same location. It will not be be imported by TrEd automatically and I did not figure out any
-better way than including it from (or copying the macros to) the macro file of the ud extension
-that _is_ loaded automatically. The extensions are in the `.tred.d` folder (also in the
-Roaming profile):
+It is possible to add the following to the configuration file:
 
 ```
-%USERPROFILE%\AppData\Roaming\.tred.d\extensions\ud\contrib\ud\contrib.mac
-```
-
-
-
 ;; ------------------------------------------------------------
 ;; Macros
 ;; ------------------------------------------------------------
 
-MacroFile = C:\\Users\\Dan\\AppData\\Roaming\\tred.mac
+MacroFile = contrib/dan/tred-ud-treex.mac
+```
 
+The `MacroFile` option is supposed to hold path relative to the `tredlib` subfolder in the
+TrEd installation folder, i.e., `C:\tred\tredlib` on my computer. The option thus cannot take
+absolute path starting with `C:\Users\zeman`, for example. It might be possible to make the
+path relative and still lead it to a user space (`../../User/`). Or one can simply copy
+the macros to a new subfolder of `C:\tred\tredlib\contrib`, as I did. The macros then appear
+in TrEd in mode TredMacro (set the mode in the upper right corner; then menu
+Macros / Current Mode / More... / Set deprel to cop (for example).
 
+It would be also possible to implant the file to the macros provided by the UD extension to
+TrEd. The extensions are in the `.tred.d` folder (also in the Roaming profile):
 
-ERROR: Cannot open macros: C:/tred/tredlib/C:\Users\Dan\AppData\Roaming\tred-ud-treex.mac (Invalid argument)!
- at tred line 6624.
-
-
-It is possible to copy the macro file to the `tredlib\contrib` folder within the TrEd installation
-folder (by default `C:\tred\tredlib\contrib`). See the `README` file therein. It should be probably
-treated as a separate package with its own subfolder containing a file named `contrib.mac`.
+```
+%USERPROFILE%\AppData\Roaming\.tred.d\extensions\ud\contrib\ud\contrib.mac
+```
