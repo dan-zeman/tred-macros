@@ -29,3 +29,21 @@ Roaming profile):
 ```
 %USERPROFILE%\AppData\Roaming\.tred.d\extensions\ud\contrib\ud\contrib.mac
 ```
+
+
+
+;; ------------------------------------------------------------
+;; Macros
+;; ------------------------------------------------------------
+
+MacroFile = C:\\Users\\Dan\\AppData\\Roaming\\tred.mac
+
+
+
+ERROR: Cannot open macros: C:/tred/tredlib/C:\Users\Dan\AppData\Roaming\tred-ud-treex.mac (Invalid argument)!
+ at tred line 6624.
+
+
+It is possible to copy the macro file to the `tredlib\contrib` folder within the TrEd installation
+folder (by default `C:\tred\tredlib\contrib`). See the `README` file therein. It should be probably
+treated as a separate package with its own subfolder containing a file named `contrib.mac`.
