@@ -45,6 +45,14 @@ Macros / Current Mode / More... / Set deprel to cop (for example). If we want th
 (instead of TredMacro), we can use menu Macros / All Modes / TredMacro / More... / Set deprel
 to cop.
 
+Problém: Když soubor s makry umístím, jak je uvedeno výše, tak se makra sice objeví v menu
+a TrEd bude znát příslušné klávesové zkratky, ale po pokusu některé makro opravdu spustit
+se objeví chyba, že příslušnou funkci nelze v balíčku TredMacro najít.
+
+Podle C:\tred\tredlib\contrib\README se zdá, že kdybych soubor s makry dal do podadresáře dan
+a pojmenoval ho contrib.mac, TrEd by ho možná načetl automaticky a nemusel bych ho explicitně
+uvádět v .tredrc.
+
 It would be also possible to implant the file to the macros provided by the UD extension to
 TrEd. The extensions are in the `.tred.d` folder (also in the Roaming profile):
 
