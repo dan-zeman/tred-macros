@@ -2,21 +2,15 @@
 
 # UD Treex macros for Tred
 
-# This macro file should be placed in your personal configuration folder, probably something
-# like the following (replace "Dan" with your own user name):
-#   C:\Users\Dan\AppData\Roaming\tred-ud-treex.mac
-# If you found the file elsewhere, it is probably a backup copy and modifying it will not
-# affect your Tred configuration. If it is located correctly but Tred still fails to load it
-# automatically, try including it from the EasyTreex extension macro file, which should be
-# located at:
-#   C:\Users\Dan\AppData\Roaming\.tred.d\extensions\easytreex\contrib\treex\contrib.mac
+# See the README.md file for instructions on how to use this file.
+
 # The macro language is essentially Perl. Documentation of macro writing is at:
 #   https://ufal.mff.cuni.cz/pdt2.0/doc/tools/tred/ar01s14.html
 
 # Treex_mode is the default mode that will be active if we open a Treex file.
 # Let's add our macros to that mode.
-#package TredMacro_mode;
-package TredMacro;
+#package Treex_mode;
+#package TredMacro;
 
 # This macro file defines keyboard shortcuts to universal POS tags and dependencies.
 # Certain parts are language-dependent and will have to be modified before the macros can be used

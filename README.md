@@ -1,4 +1,5 @@
 # tred-macros
+
 Keyboard shortcuts and other macros to speed up UD annotation in TrEd.
 
 TrEd is a customizable cross-platform treebank annotation program written in Perl and Tk.
@@ -12,11 +13,14 @@ TrEd has many extensions for different annotation scenarios, including one for
 Extensions come with macros that help you achieve certain operations easier and faster.
 You can also define your own macros. I keep mine in this repository.
 
+
+
 ## Loading the macros to TrEd
 
 The information in this section is based on my observations and it may not be the best or
 intended way of achieving what I want to achieve. It is quite possible that the correct
-way is documented somewhere and I have overlooked it.
+way is documented somewhere and I have overlooked it. I know of two ways how to have the
+macros loaded in TrEd. One is via the global configuration, the other via an extension.
 
 TrEd's main configuration file is named `.tredrc` and its location depends on the operating
 system. On my Windows 11, it is
@@ -37,28 +41,55 @@ MacroFile = contrib/dan/tred-ud-treex.mac
 
 The `MacroFile` option is supposed to hold path relative to the `tredlib` subfolder in the
 TrEd installation folder, i.e., `C:\tred\tredlib` on my computer. The option thus cannot take
-absolute path starting with `C:\Users\zeman`, for example. It might be possible to make the
-path relative and still lead it to a user space (`../../User/`). Or one can simply copy
-the macros to a new subfolder of `C:\tred\tredlib\contrib`, as I did. The macros then appear
-in TrEd in mode TredMacro (set the mode in the upper right corner; then menu
-Macros / Current Mode / More... / Set deprel to cop (for example). If we want the UD mode on
-(instead of TredMacro), we can use menu Macros / All Modes / TredMacro / More... / Set deprel
-to cop.
+absolute path starting with `C:\Users\. We can create a new subfolder of `C:\tred\tredlib\contrib`
+and copy the file there.
 
-Problém: Když soubor s makry umístím, jak je uvedeno výše, tak se makra sice objeví v menu
-a TrEd bude znát příslušné klávesové zkratky, ale po pokusu některé makro opravdu spustit
-se objeví chyba, že příslušnou funkci nelze v balíčku TredMacro najít.
-
-Podle C:\tred\tredlib\contrib\README se zdá, že kdybych soubor s makry dal do podadresáře dan
-a pojmenoval ho contrib.mac, TrEd by ho možná načetl automaticky a nemusel bych ho explicitně
-uvádět v .tredrc.
-
-It would be also possible to implant the file to the macros provided by the UD extension to
-TrEd. The extensions are in the `.tred.d` folder (also in the Roaming profile):
+The second option is to add the macros to those of an installed TrEd extension, such as
+EasyTreex or UD. (Historical note: The macros were originally created for Treex in times when
+there was no UD extension. But now that we have the UD extension, we preferably want to use it
+and annotate directly CoNLL-U files.) Installed extensions can be found in the Roaming profile
+(just like the `.tredrc` file) in a folder called `.tred.d`. Each extension has a `contrib.mac`
+file, for example, the UD extension has it here:
 
 ```
 %USERPROFILE%\AppData\Roaming\.tred.d\extensions\ud\contrib\ud\contrib.mac
 ```
+
+We can edit the file and add an include of our own macro file. Again, the path must be relative,
+now to the folder in which `contrib.mac` is found. We can either copy our file to that folder
+and include it just by name, or not copy it and include it by a long relative path (the first
+include is already part of the extension):
+
+```
+#include "ud.inc"
+{
+package UD;
+#include "../../../../../../../Documents/lingvistika-projekty/tred-macros/tred-ud-treex.mac"
+}
+```
+
+Regardless whether the macros were loaded via tredlib or via an extension, it is important which
+package (Perl namespace) they are in. Names of macro packages typically correspond to names of
+TrEd annotation modes (can be selected in the upper right corner; reset automatically when
+a file of a particular type is open). An extension typically defines its own annotation mode
+and package, often with the same name as the extension itself. Macros in tredlib belong to the
+`TredMacro` mode and package. To make sure that the macros are in the right package, either
+the `package` keyword must be used inside the macro file (e.g., `package TredMacro;`) or the
+macro file must be included from a place where the package namespace is still in effect. If the
+macro subroutines are not in the right package, they will be offered by the TrEd interface but
+an attempt to use them will fail.
+
+All macros of all annotation modes will become available in the menu Macros / All Modes (and
+for the current annotation mode, also in Macros / Current Mode). Those that have keyboard
+shortcuts defined will be also accessible via these shortcuts provided their mode is the current
+mode and the shortcut has not been stolen by another macro defined later in the same mode.
+
+I currently include the macros in package UD from the UD extension, as shown above. Some of
+them will need adaptation, as they were originally written for the Treex mode.
+
+The macro language is essentially Perl. Documentation of macro writing is at:
+<https://ufal.mff.cuni.cz/pdt2.0/doc/tools/tred/ar01s14.html>
+
 
 ## Keyboard shortcuts
 
