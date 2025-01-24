@@ -6,7 +6,7 @@
 ;; Macros
 ;; ------------------------------------------------------------
 
-MacroFile = C:\\Users\\Dan\\AppData\\Roaming\\tred.mac
+MacroFile = contrib/dan/tred-ud-treex.mac
 
 ;; ------------------------------------------------------------
 ;; Fonts
@@ -217,19 +217,19 @@ MacroFile = C:\\Users\\Dan\\AppData\\Roaming\\tred.mac
 extensionRepos	=	http://ufal.mff.cuni.cz/tred/extensions/core/ http://ufal.mff.cuni.cz/tred/extensions/external/
 
 ;; Options changed by TrEd on every close (DO NOT EDIT)
-LastAction	=	C:\\Users\\Dan\\Documents\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\02\\train\\tamw\\ln94208_79.treex##21.98
-Geometry	=	1680x987+-3+-3
+LastAction	=	C:\\Users\\zeman\\Documents\\lingvistika-projekty\\romani\\foma\\pal_o_nufo.conllu##9.14
+Geometry	=	1920x1129+-3+-3
 ShowSidePanel	=	
 CanvasHeight	=	12c
 CanvasWidth	=	18c
-RecentFile0	=	C:\\Users\\Dan\\Documents\\Lingvistika\\Projekty\\umr\\pokusy_honzy_stepanka\\mf920922_133.treex.gz
-RecentFile1	=	C:/Users/Dan/Documents/Lingvistika/Projekty/umr/pokusy_honzy_stepanka/mf920922_133.treex.gz
-RecentFile2	=	C:/Users/Dan/Documents/Lingvistika/Projekty/umr/Pokusy Honzy ?t?pánka/mf920922_133.treex.gz
-RecentFile3	=	C:\\Users\\Dan\\Documents\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\02\\train\\tamw\\cmpr9410_046.treex
-RecentFile4	=	C:/Users/Dan/Documents/Lingvistika/Data/treebanks/HamleDT/cs/treex/02/train/tamw/cmpr9410_046.treex
-RecentFile5	=	C:\\Users\\Dan\\Documents\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\02\\train\\tamw\\ln94208_79.treex
-RecentFile6	=	C:/Users/Dan/Documents/Lingvistika/Data/treebanks/HamleDT/cs/treex/02/train/tamw/ln94208_79.treex
-RecentFile7	=	C:\\Users\\Dan\\Documents\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\02\\train\\tamw\\ln95045_081.treex
-RecentFile8	=	C:/Users/Dan/Documents/Lingvistika/Data/treebanks/HamleDT/cs/treex/02/train/tamw/ln95045_081.treex
-RecentFile9	=	C:\\Users\\Dan\\Documents\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\02\\train\\tamw\\ln94200_61.treex
-filelist0		=	C:\\Users\\Dan\\AppData\\Roaming/.tred_bookmarks
+RecentFile0	=	C:\\Users\\zeman\\Documents\\lingvistika-projekty\\romani\\foma\\pal_o_nufo.conllu
+RecentFile1	=	C:/Users/zeman/Documents/lingvistika-projekty/romani/foma/pal_o_nufo.conllu
+RecentFile2	=	C:\\Users\\zeman\\OneDrive\\Dokumenty\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\01\\dev\\tamw\\cmpr9410_019.treex
+RecentFile3	=	C:/Users/zeman/OneDrive/Dokumenty/Lingvistika/Data/treebanks/HamleDT/cs/treex/01/dev/tamw/cmpr9410_019.treex
+RecentFile4	=	C:\\Users\\zeman\\OneDrive\\Dokumenty\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\01\\dev\\amw\\cmpr9406_019.treex
+RecentFile5	=	C:/Users/zeman/OneDrive/Dokumenty/Lingvistika/Data/treebanks/HamleDT/cs/treex/01/dev/amw/cmpr9406_019.treex
+RecentFile6	=	C:\\Users\\zeman\\OneDrive\\Dokumenty\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\01\\train\\tamw\\lnd94103_122.treex
+RecentFile7	=	C:/Users/zeman/OneDrive/Dokumenty/Lingvistika/Data/treebanks/HamleDT/cs/treex/01/train/tamw/lnd94103_122.treex
+RecentFile8	=	C:\\Users\\zeman\\OneDrive\\Dokumenty\\Lingvistika\\Data\\treebanks\\HamleDT\\cs\\treex\\01\\train\\tamw\\lnd94103_102.treex
+RecentFile9	=	C:/Users/zeman/OneDrive/Dokumenty/Lingvistika/Data/treebanks/HamleDT/cs/treex/01/train/tamw/lnd94103_102.treex
+filelist0		=	C:\\Users\\zeman\\AppData\\Roaming/.tred_bookmarks
