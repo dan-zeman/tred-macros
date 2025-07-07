@@ -18,9 +18,17 @@ You can also define your own macros. I keep mine in this repository.
 ## Loading the macros to TrEd
 
 The information in this section is based on my observations and it may not be the best or
-intended way of achieving what I want to achieve. It is quite possible that the correct
-way is documented somewhere and I have overlooked it. I know of two ways how to have the
-macros loaded in TrEd. One is via the global configuration, the other via an extension.
+intended way of achieving what I want to achieve. It is quite possible that the correct way
+is documented somewhere and I have overlooked it. I know of several ways how to have the
+macros loaded in TrEd. One way is to specify a macro file when launching TrEd, another is
+via the global configuration, yet another via an extension.
+
+It is possible to launch TrEd (from the command line or through a shortcut file) like this
+(adjust the path to where your copy of the macro file lies):
+
+```
+C:\tred>tred.bat --context UD --include-macro-file %USERPROFILE%\AppData\Roaming\tred-ud-treex.mac
+```
 
 TrEd's main configuration file is named `.tredrc` and its location depends on the operating
 system. On my Windows 11, it is
@@ -67,6 +75,10 @@ package UD;
 #include "../../../../../../../Documents/lingvistika-projekty/tred-macros/tred-ud-treex.mac"
 }
 ```
+
+The problem with this approach is that we are fiddling with a file that belongs to the extension.
+If the extension is updated to a new version (e.g., from the Setup / Manage extensions... menu
+in TrEd), the configuration file will be overwritten and our additions will be lost.
 
 Regardless whether the macros were loaded via tredlib or via an extension, it is important which
 package (Perl namespace) they are in. Names of macro packages typically correspond to names of
